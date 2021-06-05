@@ -29,13 +29,15 @@ function App() {
           conditionText: res.data.current.condition.text,
           icon: res.data.current.condition.icon
         })
+        setCity("");
       })
+      .catch(error => alert("Oops, something went wrong. Reload the page to try again."));
   }
 
   return (
     <div className="App">
       <Title title="World Weather"/>
-      <Form setCity={setCity} getWeather={getWeather}/>
+      <Form setCity={setCity} getWeather={getWeather} city={city}/>
       <Results results={results}/>
     </div>
   );

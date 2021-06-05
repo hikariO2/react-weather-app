@@ -1,13 +1,14 @@
 const Form = ({
     setCity,
-    getWeather
+    getWeather,
+    city
 }) => {
     
 
     return (
-        <form>
-            <input type="text" name="city" placeholder="City Name" onChange={event => setCity(event.target.value)}/>
-            <button type="submit" onClick={getWeather}>Get weather</button>
+        <form onSubmit={getWeather}>
+            <input type="text" name="city" placeholder="City Name" onChange={event => setCity(event.target.value)} value={city} />
+            <button type="submit">Get weather</button>
         </form>
     );
 }; 
